@@ -12,7 +12,7 @@ def rivers_with_station(stations):
    """Builds and returns a set with the names of all the rivers with a monitoring station.
       Stations is a list of MonitoringStation objects."""
 
-   rivers = {}
+   rivers =set()
    for station in stations:
       if station.river != None:
          rivers.add(station.river)
@@ -27,6 +27,9 @@ def stations_by_river(stations):
 
    for station in stations:
       if station.river != None:
-         stations_by_river_dictionary[station.river] = (station.name)
+         stations_by_river_dictionary[station.river] = []
+   for station in stations:
+      if station.river != None:
+         stations_by_river_dictionary[station.river].append(station.name)
 
    return  stations_by_river_dictionary
