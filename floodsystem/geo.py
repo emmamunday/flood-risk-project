@@ -40,9 +40,10 @@ def rivers_by_station_number(stations, N):
    rivers = []
    for station in stations:
        rivers.append(station.river)
-   counts = {}
+   counts = set()
    for river in rivers:
-      counts[river] = rivers.count(river)
+      counts.add((rivers.count(river), river))
+   counts = sorted(counts, reverse = True)
+   top_n = counts[:N]
 
-   return counts
-
+   return top_n
