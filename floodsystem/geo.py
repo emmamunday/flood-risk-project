@@ -33,3 +33,16 @@ def stations_by_river(stations):
          stations_by_river_dictionary[station.river].append(station.name)
 
    return  stations_by_river_dictionary
+
+
+def rivers_by_station_number(stations, N):
+   """Builds and returns ..."""
+   rivers = []
+   for station in stations:
+       rivers.append(station.river)
+   counts = {}
+   for river in rivers:
+      counts[river] = rivers.count(river)
+
+   return counts
+
