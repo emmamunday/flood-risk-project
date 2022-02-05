@@ -39,8 +39,7 @@ def rivers_by_station_number(stations, N):
    """Builds and returns ..................
    ............................
    
-   
-   ............"""
+   """
    rivers = []
    for station in stations:
        rivers.append(station.river)
@@ -49,5 +48,8 @@ def rivers_by_station_number(stations, N):
       counts.add((rivers.count(river), river))
    counts = sorted(counts, reverse = True)
    top_n = counts[:N]
+   for i in range(N,len(counts)):
+      if top_n[N-1][0] == counts[i][0]:
+            top_n.append(counts[i])
 
    return top_n
