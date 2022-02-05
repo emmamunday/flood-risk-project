@@ -36,7 +36,11 @@ def stations_by_river(stations):
 
 
 def rivers_by_station_number(stations, N):
-   """Builds and returns ..."""
+   """Builds and returns ..................
+   ............................
+   
+   
+   ............"""
    rivers = []
    for station in stations:
        rivers.append(station.river)
