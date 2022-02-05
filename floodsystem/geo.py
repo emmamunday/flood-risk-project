@@ -36,20 +36,20 @@ def stations_by_river(stations):
 
 
 def rivers_by_station_number(stations, N):
-   """Builds and returns ..................
-   ............................
-   
+   """Builds and returns a list of the N rivers with the greatest number of stations (as a tuple: river name, number of stations)
+   In the case where there are multiple rivers with the same number of stations as the Nth station, these are also included.   
    """
+
    rivers = []
    for station in stations:
        rivers.append(station.river)
    counts = set()
    for river in rivers:
-      counts.add((rivers.count(river), river))
-   counts = sorted(counts, reverse = True)
+      counts.add((river, rivers.count(river), ))
+   counts = sorted(counts, reverse = True, key=lambda x: x[1])
    top_n = counts[:N]
    for i in range(N,len(counts)):
-      if top_n[N-1][0] == counts[i][0]:
+      if top_n[N-1][1] == counts[i][1]:
             top_n.append(counts[i])
 
    return top_n
