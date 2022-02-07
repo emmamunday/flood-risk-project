@@ -6,6 +6,7 @@ geographical data.
 
 """
 
+import pip
 from .utils import sorted_by_key  # noqa
 
 def rivers_with_station(stations):
@@ -53,3 +54,16 @@ def rivers_by_station_number(stations, N):
             top_n.append(counts[i])
 
    return top_n
+
+def stations_by_distance(stations, p):
+   rivers =[]
+   from haversine import haversine
+   for station in stations:
+      coords = station.coord
+      distance = haversine(p,coords)
+      rivers.append((station.name,distance))
+   rivers = sorted_by_key(rivers,1)
+   return rivers
+
+
+#def stations_within_radius(stations, centre, r):

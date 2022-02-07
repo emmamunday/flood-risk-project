@@ -28,6 +28,8 @@ class MonitoringStation:
         self.town = town
 
         self.latest_level = None
+        
+ 
 
     def __repr__(self):
         d = "Station name:     {}\n".format(self.name)
@@ -38,3 +40,5 @@ class MonitoringStation:
         d += "   river:         {}\n".format(self.river)
         d += "   typical range: {}".format(self.typical_range)
         return d
+
+        
