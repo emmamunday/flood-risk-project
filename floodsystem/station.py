@@ -5,7 +5,7 @@
 for manipulating/modifying station data
 
 """
-
+from .utils import sorted_by_key
 
 class MonitoringStation:
     """This class represents a river level monitoring station"""
@@ -41,4 +41,18 @@ class MonitoringStation:
         d += "   typical range: {}".format(self.typical_range)
         return d
 
+    def typical_range_consistent(self):
+        if self.typical_range != None:
+            if self.typical_range[0] < self.typical_range[1]:
+                return True
         
+        return False
+    
+
+    def inconsistent_typical_range_stations(stations):
+        rivers = []
+        for station in stations:
+            if not station.typical_range_consistent():
+                rivers.append(station.name)
+        rivers = sorted_by_key(rivers,0)    
+        return rivers
