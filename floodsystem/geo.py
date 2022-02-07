@@ -66,4 +66,13 @@ def stations_by_distance(stations, p):
    return rivers
 
 
-#def stations_within_radius(stations, centre, r):
+def stations_within_radius(stations, centre, r):
+   rivers =[]
+   from haversine import haversine
+   for station in stations:
+      coords = station.coord
+      distance = haversine(centre,coords)
+      if distance < 10:
+         rivers.append(station.name)
+   rivers = sorted_by_key(rivers,0)
+   return rivers
