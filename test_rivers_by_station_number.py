@@ -1,8 +1,5 @@
-from tkinter import N
-from floodsystem.geo import rivers_by_station_number
 from floodsystem.stationdata import build_station_list
 from floodsystem.geo import rivers_by_station_number
-
 
 def test_rivers_by_station_number(N):
     stations = build_station_list()
