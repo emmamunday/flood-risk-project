@@ -1,5 +1,6 @@
 from floodsystem.stationdata import build_station_list
 from floodsystem.geo import rivers_with_station, stations_by_river
+from test_rivers_with_station import test_rivers_with_station
 
 def run():
     """ Requirments for task 1D"""
@@ -13,6 +14,7 @@ def run():
     print(f"Stations on River Aire: {sorted(stations_by_river_dict['River Aire'])}")
     print(f"Stations on River Cam: {sorted(stations_by_river_dict['River Cam'])}")
     print(f"Stations on River Thames: {sorted(stations_by_river_dict['River Thames'])}")
+
 
 if __name__ == "__main__":
     print("*** Task 1A: CUED Part IA Flood Warning System ***")
