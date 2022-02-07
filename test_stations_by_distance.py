@@ -9,8 +9,8 @@ def test_stations_by_river():
 
     assert type(x) is list
     
-    for i in range(len(x)):
-        assert type(x[i]) is tuple
-        assert x[i][1] >= 0
+    for i in x:
+        assert type(i) is tuple
+        assert i[1] >= 0
 
 test_stations_by_river()

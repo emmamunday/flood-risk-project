@@ -7,6 +7,9 @@ def test_rivers_by_station_number(N):
 
     assert type(x) is list
     assert len(x) >= N
+    for i in range(len(x)):
+        assert type(x[i]) is tuple
+        assert x[i][1] >= 1
 
 test_rivers_by_station_number(7)
 
