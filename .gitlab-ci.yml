@@ -6,7 +6,7 @@ test:
   # packages your code needs require here.
   - pip install dateutils flake8 matplotlib numpy pytest requests
 
-  # flake8 static code and style testing. Enable for extra testing.
+   flake8 static code and style testing. Enable for extra testing.
   # - python -m flake8 .
 
     # Run unit tests
