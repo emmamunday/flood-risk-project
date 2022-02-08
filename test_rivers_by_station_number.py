@@ -11,6 +11,6 @@ def test_rivers_by_station_number():
         assert type(x[i]) is tuple
         assert x[i][1] >= 1
 
-test_rivers_by_station_number(7)
+test_rivers_by_station_number()
 
 
