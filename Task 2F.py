@@ -1,0 +1,19 @@
+import datetime
+from floodsystem.datafetcher import fetch_measure_levels
+from floodsystem.stationdata import build_station_list, update_water_levels
+#from floodsystem.flood import stations_highest_rel_level
+from floodsystem.plot import plot_water_levels, plot_water_level_with_fit
+
+def run():
+    stations = build_station_list()
+    update_water_levels(stations)
+    station = stations[5]
+    n_days = 2
+
+    dates, levels = fetch_measure_levels(station.measure_id, dt=datetime.timedelta(days=n_days))
+    plot_water_level_with_fit(station, dates, levels, 4)
+
+
+if __name__ == "__main__":
+    print("*** Task 2E: CUED Part IA Flood Warning System ***")
+    run()
