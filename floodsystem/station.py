@@ -6,6 +6,7 @@ for manipulating/modifying station data
 
 """
 from .utils import sorted_by_key
+from floodsystem.stationdata import build_station_list, update_water_levels
 
 class MonitoringStation:
     """This class represents a river level monitoring station"""
@@ -56,3 +57,20 @@ class MonitoringStation:
                 rivers.append(station.name)
         rivers = sorted_by_key(rivers,0)    
         return rivers
+
+    def relative_water_level(self):
+        
+        #tations = build_station_list()
+
+    
+        #update_water_levels(stations)
+        #for station in stations:
+            if self.typical_range_consistent():
+                ratio = (self-self.typical_range[0])/self.typical_range[1]
+                return ratio   
+            else:
+                return None
+                
+
+        
+        
