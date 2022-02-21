@@ -54,14 +54,10 @@ class MonitoringStation:
         return rivers 
     
     def relative_water_level(self):
-        from floodsystem.stationdata import build_station_list, update_water_levels 
-        stations = build_station_list()
-
-    
-        update_water_levels(stations)
-        for station in stations:
-            if self.typical_range_consistent():
-                ratio = (station.latestlevel - self.typical_range[0])/self.typical_range[1]
-                return ratio   
-            else:
-                return None
+        
+        
+        if self.typical_range_consistent() == True and self.latest_level != None:
+            return (self.latest_level - self.typical_range[0])/(self.typical_range[1]-self.typical_range[0])
+               
+        else:
+            return None
