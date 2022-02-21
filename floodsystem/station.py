@@ -54,10 +54,7 @@ class MonitoringStation:
         return rivers 
     
     def relative_water_level(self):
-        
-        
         if self.typical_range_consistent() == True and self.latest_level != None:
-            return (self.latest_level - self.typical_range[0])/(self.typical_range[1]-self.typical_range[0])
-               
+            return (self.latest_level - self.typical_range[0])/(self.typical_range[1]-self.typical_range[0])  
         else:
             return None
