@@ -11,7 +11,7 @@ def run():
     rivers_sorted = stations_highest_rel_level(stations, 10)
     for station in rivers_sorted:
 
-        print(station[0],station[1])
+        print(station[0].name,station[1])
 
 
 

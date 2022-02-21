@@ -8,11 +8,9 @@ def run():
     stations = build_station_list()
     update_water_levels(stations)
     
-    rivers_sorted = stations_level_over_threshold(stations,0.8)
-    for station in rivers_sorted:
-
-        print(station[0],station[1])
-
+    high_stations = stations_level_over_threshold(stations,0.8)
+    for station in high_stations:
+        print(station[0].name,station[1])
 
 
 if __name__ == "__main__":
