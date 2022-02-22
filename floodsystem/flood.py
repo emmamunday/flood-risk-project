@@ -10,9 +10,9 @@ def stations_level_over_threshold(stations, tol):
                 pass
 
             elif  station.relative_water_level() > tol:
-                rivers.append((station,station.relative_water_level()))
+                rivers.append((station,station.town,station.relative_water_level()))
 
-    rivers = sorted_by_key(rivers,1,True)
+    rivers = sorted_by_key(rivers,2,True)
     return rivers  
 
 def stations_highest_rel_level(stations, N):
