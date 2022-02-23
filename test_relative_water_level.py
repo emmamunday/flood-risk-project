@@ -18,4 +18,3 @@ def test_relative_water_level():
            raise AssertionError ("Output should be type float or NoneType") 
 
 test_relative_water_level()
-
