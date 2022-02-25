@@ -4,6 +4,7 @@ import matplotlib as mpl
 import numpy as np
 
 def test_polyfit():
+    import datetime
 
     shift = 1
     power = 2
