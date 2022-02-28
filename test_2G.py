@@ -96,9 +96,16 @@ def test_task_2G():
     assert type(town_high) is list
     assert type(town_moderate) is list
     assert type(town_low) is list
-    assert type(town_severe[0]) is str
-    assert type(town_high[0]) is str
-    assert type(town_moderate[0]) is str
-    assert type(town_low[0]) is str
+    if len(town_severe) != 0:
+        assert type(town_severe[0]) is str
+
+    if len(town_low) != 0:
+        assert type(town_low[0]) is str
+
+    if len(town_high) != 0:
+        assert type(town_high[0]) is str
+
+    if len(town_moderate) != 0:
+        assert type(town_moderate[0]) is str
 
 test_task_2G()
